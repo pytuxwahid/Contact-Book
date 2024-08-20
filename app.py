@@ -29,24 +29,6 @@ def remove_contact():
 
     print("Contact removed succesfully.")
 
-    def lend_book(self, title):
-        title = title.lower()
-        for book in self.books:
-            if title in book.title.lower():
-                if book.quantity > 0:
-                    borrower_name = input("Enter your name: ")
-                    borrower_phone = input("Enter your phone number: ")
-                    book.quantity -= 1
-                    if book.isbn not in self.lent_books:
-                        self.lent_books[book.isbn] = []
-                    self.lent_books[book.isbn].append({'name': borrower_name, 'phone': borrower_phone})
-                    self.save_books()
-                    print(f"Book '{book.title}' lent to {borrower_name}.")
-                else:
-                    print(f"Book '{book.title}' is not available for lend.")
-                return
-        print("Book not found.")
-
 
 def update_contact():
     # 1. Select the contact
